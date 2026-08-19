@@ -343,21 +343,3 @@ while True:
 cur.close()
 con.close()
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
