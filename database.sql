@@ -20,7 +20,7 @@ alter table orders add quantity int;
 alter table orders add price int;
 alter table orders add costprice int;
 select * from orders;
-insert into admin(aname,password) values('Likki','Likki@123');
+insert into admin(aname,password) values('Likitha','My_Admin_Password');
 show tables;
 alter table menu add costprice int;
 commit;
