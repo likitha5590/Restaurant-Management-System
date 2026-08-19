@@ -8,20 +8,16 @@ mobilenum varchar(40) not null);
 select * from user;
 create table menu(itemid int primary key,itemname varchar(50) not null,
 catogery varchar(50),quantity int,price int not null);
+alter table menu add costprice int;
 select * from menu;
 create table cart(cartid int auto_increment primary key,itemname varchar(50) not null,
 quantity int);
 select * from cart;
-create table orders(orderid int auto_increment primary key,orderdate date);
-alter table orders add cartid int;
-alter table orders add constraint fk_tabl foreign key(cartid) references cart(cartid);
-alter table orders add itemname varchar(50);
-alter table orders add quantity int;
-alter table orders add price int;
-alter table orders add costprice int;
+create table orders(orderid int auto_increment primary key,orderdate date ,cartid int,
+itemname varchar(50),quantity int,price int,costprice int);
 select * from orders;
-insert into admin(aname,password) values('Likitha','My_Admin_Password');
+insert into admin(aname,password) values('Likki','Likki@123');
 show tables;
-alter table menu add costprice int;
 commit;
-
+alter table orders add constraint fk_orders_cart foreign key(cartid) 
+references cart(cartid) on delete set null;
