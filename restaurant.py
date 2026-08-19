@@ -212,10 +212,8 @@ while True:
                         old_qty=cart_data[1]
                         new_qty=old_qty+qty
                         cur.execute('update cart set quantity=%s where cartid=%s',(new_qty,cart_id))
-                        print('item added to cart')
                     else:
                         cur.execute('insert into cart(itemname,quantity) values(%s,%s)',(item_name,qty))
-                        print('item added to cart')
                     cur.execute('update menu set quantity=quantity-%s where itemname=%s',(qty,item_name))
                         #cur.execute('alter table Cart add constraint fk_it foreign key(user_id)references User(uid)')
                     con.commit()
