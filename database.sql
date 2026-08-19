@@ -24,3 +24,4 @@ insert into admin(aname,password) values('Likitha','My_Admin_Password');
 show tables;
 alter table menu add costprice int;
 commit;
+
